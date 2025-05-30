@@ -1,0 +1,19 @@
+public class Main {
+
+
+    public static void main(String[] args) {
+        Figura figura1 = new Figura("Cuadrado", "Rojo", new Punto(5, 10));
+        System.out.println(figura1);
+
+        
+       
+        Rectangulo rectangulo1 = new Rectangulo(6.0, 4.0, "Rectangulito", "Violeta", new Punto(3, 7));
+        System.out.println(rectangulo1);
+        rectangulo1.cambiarTamanio(2.0);
+        System.out.println(rectangulo1);
+
+    }
+
+    
+}
+    

@@ -1,0 +1,55 @@
+public class Rectangulo extends Figura {
+    private double base;
+    private double altura;
+
+    public Rectangulo(Double base, double altura, String nombre, String color, Punto centro){
+        super(nombre, color, centro);
+        this.base = base;
+        this.altura = altura;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n" +
+                "Base: " + base + "\n" +
+                "Altura: " + altura + "\n" +
+                "Area: " + CalcularArea() + "\n" +
+                "Perimetro: " + CalcularPerimetro();
+
+    }
+
+    public double CalcularArea() {
+        return base * altura;
+         
+
+    }
+    public double CalcularPerimetro(){
+        return 2 * (base + altura);
+    }
+
+    public void setBase(double newBase){
+        this.base = newBase;
+    }
+
+    public void setAltura(double newAltura){
+        this.altura = newAltura;
+    }
+
+
+    public double getBase() {
+        return base;
+    }
+    public double getAltura() {
+        return altura;
+    }
+
+    public void cambiarTamanio(double tamanio){
+        if (tamanio <= 0) {
+            System.out.println("El factor de cambio no puede ser negativo.");
+            return;
+        }   
+    this.base = this.base * tamanio;
+    this.altura = this.altura * tamanio;
+}
+    
+}

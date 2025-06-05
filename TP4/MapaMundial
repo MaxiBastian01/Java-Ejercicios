@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+public class MapaMundial {
+    private ArrayList<Continente> continentes;
+
+
+    public MapaMundial() {
+        continentes = new ArrayList<>();
+    }
+
+  
+    public void agregarContinente(Continente continente) {
+        continentes.add(continente);
+    } 
+
+    // Método para obtener un Set de paises de un continente dado su nombre
+    public Set<Pais> getPaises(String nombreContinente) {
+        for (Continente c : continentes) { // Recorre la lista de continentes / c es un objeto Continente
+            if (c.getNombre().equalsIgnoreCase(nombreContinente)) {// Compara el nombre del continente con el nombre pasado como parámetro
+                return new HashSet<>(c.getPaises());// El hashset es una colección que no permite duplicados, por lo que devuelve un set de paises
+            }
+        }
+        return new HashSet<>(); // Si no encuentra el continente, devuelve set vacío
+    }
+    
+    //Metodo para obtener provincias de un país dado su nombre
+    public Set<Provincia> getProvincias(String nombrePais) {
+    for (Continente continente : continentes) {
+        for (Pais pais : continente.getPaises()) {
+            if (pais.getNombre().equalsIgnoreCase(nombrePais)) {
+                return new HashSet<>(pais.getProvincias());
+            }
+        }
+    }
+    return new HashSet<>(); // Si no encuentra el país, devuelve set vacío
+}
+

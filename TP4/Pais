@@ -1,0 +1,62 @@
+import java.util.ArrayList;
+
+public class Pais {
+    private String nombre;
+    private String capital;
+    private int superficie;
+    private ArrayList<Provincia> provincias;
+    private Continente continente;
+
+    public Pais(String nombre, String capital, int superficie, ArrayList<Provincia> provincias, Continente continente){
+        this.nombre = nombre;
+        this.capital = capital;
+        this.superficie = superficie;
+        this.provincias = provincias;
+        this.continente = continente;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCapital() {
+        return capital;
+    }
+
+    public void setCapital(String capital) {
+        this.capital = capital;
+    }
+
+    public int getSuperficie() {
+        return superficie;
+    }
+
+    public void setSuperficie(int superficie) {
+        this.superficie = superficie;
+    }
+
+    public ArrayList<Provincia> getProvincias() {
+        return provincias;
+    }
+
+    public void setProvincias(ArrayList<Provincia> provincias) {
+        this.provincias = provincias;
+    }
+
+    public Continente getContinente() {
+        return continente;
+    }
+
+    public void setContinente(Continente continente) {
+        this.continente = continente;
+    }
+
+    @Override
+    public String toString() {
+        return "País: " + nombre + ", Capital: " + capital + ", Superficie: " + superficie + " km², Provincias: " + provincias;
+    }
+}

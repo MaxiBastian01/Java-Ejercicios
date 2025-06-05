@@ -1,0 +1,88 @@
+import java.util.ArrayList;
+import java.util.Set;
+
+public class Main {
+    public static void main(String[] args) {
+        //Array de paises para crear los objetos continentes
+        ArrayList<Pais> paisesAmerica = new ArrayList<>();
+        ArrayList<Pais> paisesEuropa = new ArrayList<>();
+        ArrayList<Pais> paisesAsia = new ArrayList<>();
+        ArrayList<Pais> paisesAfrica = new ArrayList<>();
+        ArrayList<Pais> paisesOceania = new ArrayList<>();
+        ArrayList<Pais> paisesAntartida = new ArrayList<>();
+
+        // Crear continente 
+        Continente america = new Continente("América", paisesAmerica);
+        Continente Europa = new Continente("Europa", paisesEuropa);
+        Continente Asia = new Continente("Asia", paisesAsia);
+        Continente Africa = new Continente("África", paisesAfrica);
+        Continente Oceania = new Continente("Oceanía", paisesOceania);
+        Continente Antartida = new Continente("Antártida", paisesAntartida);   
+
+        // Crear mapa mundial
+        MapaMundial mapaMundial = new MapaMundial();
+        mapaMundial.agregarContinente(america);
+        mapaMundial.agregarContinente(Europa);
+        mapaMundial.agregarContinente(Asia);
+        mapaMundial.agregarContinente(Africa);
+        mapaMundial.agregarContinente(Oceania);
+        mapaMundial.agregarContinente(Antartida);
+
+        // Provincias de Argentina
+        ArrayList<Provincia> provinciasArg = new ArrayList<>();
+        provinciasArg.add(new Provincia("Buenos Aires"));
+        provinciasArg.add(new Provincia("Entre Ríos"));
+        provinciasArg.add(new Provincia("Córdoba"));
+        provinciasArg.add(new Provincia("Santa Fe"));
+        provinciasArg.add(new Provincia("Corrientes"));
+        // Provincias de Uruguay
+        ArrayList<Provincia> provinciasUru = new ArrayList<>();
+        provinciasUru.add(new Provincia("Paysandú"));
+        provinciasUru.add(new Provincia("Salto"));
+        provinciasUru.add(new Provincia("Cannelones"));
+        provinciasUru.add(new Provincia("Rocha"));
+        provinciasUru.add(new Provincia("Maldonado"));
+
+        // Crear paises 
+        Pais argentina = new Pais("Argentina", "Buenos Aires", 2780400, provinciasArg, america);
+        Pais brasil = new Pais("Brasil", "Brasilia", 8515767, new ArrayList<>(), america);
+        Pais uruguay = new Pais("Uruguay", "Montevideo", 176215, provinciasUru, america);
+        Pais chile = new Pais("Chile", "Santiago", 756102, new ArrayList<>(), america);
+        Pais paraguay = new Pais("Paraguay", "Asunción", 406752, new ArrayList<>(), america);
+        Pais bolivia = new Pais("Bolivia", "Sucre", 1098581, new ArrayList<>(), america);
+        Pais Espania = new Pais("España", "Madrid", 505990, new ArrayList<>(), Europa);
+        Pais francia = new Pais("Francia", "París", 551695, new ArrayList<>(), Europa);
+        Pais portugal = new Pais("Portugal", "Lisboa", 92090, new ArrayList<>(), Europa);
+        
+        //Agregare paises a los continentes
+        paisesAmerica.add(argentina);
+        paisesAmerica.add(brasil);
+        paisesAmerica.add(uruguay);
+        paisesAmerica.add(chile);
+        paisesAmerica.add(paraguay);
+        paisesAmerica.add(bolivia);
+        paisesEuropa.add(Espania);
+        paisesEuropa.add(francia);
+        paisesEuropa.add(portugal);
+
+        //Metodo getPaises
+        Set<Pais> paisesAmericaSet = mapaMundial.getPaises("América");
+
+        System.out.println("Países de América:");
+        for (Pais pais : paisesAmericaSet) {
+        System.out.println(pais.getNombre());
+
+        //Metodos getProvincias
+        Set<Provincia> provinciasDeArgentina = mapaMundial.getProvincias("Argentina");
+        System.out.println("Provincias de Argentina:");
+        for (Provincia provincia : provinciasDeArgentina) {
+        System.out.println(provincia.getNombre());
+        }
+
+      
+}
+
+        
+
+         }  
+}

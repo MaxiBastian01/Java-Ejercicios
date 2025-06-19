@@ -1,0 +1,17 @@
+public class Edificio implements ImpactoEcologico {
+    private double superficie;
+    private double consumoEnergia;
+
+
+    public Edificio(double superficie, double consumoEnergia) {
+            this.superficie = superficie;
+            this.consumoEnergia = consumoEnergia;
+        }
+
+    @Override
+    public double obtenerImpactoEcologico() {
+        return consumoEnergia * 0.0005;
+
+    }
+
+}

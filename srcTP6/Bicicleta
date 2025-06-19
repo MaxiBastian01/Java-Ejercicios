@@ -1,0 +1,16 @@
+public class Bicicleta implements ImpactoEcologico   {
+    private String marca;
+    private double rodado;
+
+    public Bicicleta(String marca, double rodado) {
+        this.marca = marca;
+        this.rodado = rodado;
+    }
+
+
+    @Override
+    public double obtenerImpactoEcologico() {
+        return 0.05;
+    }
+
+}
